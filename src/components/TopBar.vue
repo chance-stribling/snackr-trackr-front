@@ -3,7 +3,12 @@ import {defineComponent} from 'vue'
 export default defineComponent({
     data() {
         return{
-            title: "Snackr Trackr"
+            drawer: false,
+            title: "Snackr Trackr",
+            items: [
+                {title: 'Login', path:'/'},
+                {title: 'Snacks', path:'/snacks'}
+            ],
         }
     }
 })
@@ -15,8 +20,8 @@ export default defineComponent({
         <v-toolbar
         dark
         >
-            <v-app-bar-nav-icon></v-app-bar-nav-icon>
-            <v-app-bar-title>{{title}} <v-icon icon="mdi-noodles"></v-icon> </v-app-bar-title>
+            <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
+            <v-app-bar-title > {{title}}  <router-link to="/"> <v-icon icon="mdi-noodles"></v-icon> </router-link>  </v-app-bar-title>
         </v-toolbar>
     </v-layout>
 </template>
