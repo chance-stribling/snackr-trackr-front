@@ -21,7 +21,11 @@ export default defineComponent({
         dark
         >
             <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
-            <v-app-bar-title > {{title}}  <router-link to="/"> <v-icon icon="mdi-noodles"></v-icon> </router-link>  </v-app-bar-title>
+            <v-app-bar-title > 
+                {{title}} 
+                <v-icon icon="mdi-noodles"></v-icon>
+            </v-app-bar-title>
+            <v-btn icon="mdi-account" ></v-btn>
         </v-toolbar>
     </v-layout>
 </template>

@@ -5,6 +5,9 @@ export default defineComponent({
     data() {
         return{
             title: "Snackr Trackr",
+            dialog: false, dialog2: false,
+            items: ['foo', 'bar', 'fizz', 'buzz'],
+            values: 'foo',
             snacks:[
                 {name: 'Sprite',calories:140,sugar:38,count:2},
                 {name: 'Sprite',calories:140,sugar:38,count:2},
@@ -52,12 +55,48 @@ export default defineComponent({
                     </tr>
                 </tbody>
             </v-table>
-            <v-card-actions>
-                <v-btn class="mx-auto" variant="tonal">Have a Snack</v-btn>
+            <v-card-actions class="mt-2">
+                
+                <v-btn class="mx-auto" variant="tonal">Have a Snack
+                    <v-dialog
+                        v-model="dialog"
+                        activator="parent"
+                        width="600px"
+                    >
+                        <v-card>
+                            <v-card-title>What are we having?</v-card-title>
+                            <v-sheet width="200px"></v-sheet>
+                            
+                        <v-card-actions>
+                            <v-btn color="primary" block @click="dialog = false">Close Dialog</v-btn>
+                        </v-card-actions>
+                        </v-card>
+                    </v-dialog>
+                </v-btn>
+                
+                <v-btn class="mx-auto" variant="tonal">New Snack
+
+                    <v-dialog
+                        v-model="dialog2"
+                        activator="parent"
+                        width="600px"
+                    >
+                        <v-card>
+                            <v-card-title>Create Snack</v-card-title>
+                            <v-card-text>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </v-card-text>
+                        <v-card-actions>
+                            <v-btn block @click="dialog2 = false">Close Dialog</v-btn>
+                        </v-card-actions>
+                        </v-card>
+                    </v-dialog>
+                </v-btn>
             </v-card-actions>
         </v-card>
     </v-layout>
 </template>
 
-<style>
+<style scoped>
+
 </style>
